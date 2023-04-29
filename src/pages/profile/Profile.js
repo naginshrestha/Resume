@@ -1,11 +1,11 @@
 import React from 'react'
 import { AdminLayout } from '../../components/layout/AdminLayout'
+import { UserProfile } from '../../components/profile/UserProfile'
 
-export const Dashboard = () => {
+export const Profile = () => {
   return (
     <AdminLayout>
-        <p>Dashboard Page</p>
-        
+        <UserProfile/>
     </AdminLayout>
   )
 }

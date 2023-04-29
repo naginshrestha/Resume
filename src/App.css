@@ -16,3 +16,10 @@
 .Mainbody{
   flex-grow: 1;
 }
+.user-img {
+  height: 100px;
+  width: 100px;
+}
+.profile-info{
+  flex-grow: 1;
+}
