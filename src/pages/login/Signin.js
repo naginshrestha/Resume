@@ -1,10 +1,10 @@
-import React from 'react'
-import { AdminLayout } from '../../components/layout/AdminLayout'
+import React from "react";
+import { AdminLayout } from "../../components/layout/AdminLayout";
 
 export const Signin = () => {
   return (
     <AdminLayout>
-      <p>hdgcuy</p>
+      <p>hdgcuddfd</p>
     </AdminLayout>
-  )
-}
+  );
+};
