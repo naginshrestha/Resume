@@ -1,12 +1,11 @@
 import React from 'react'
 import { AdminLayout } from '../../components/layout/AdminLayout'
 
-const Signup = () => {
+export const Dashboard = () => {
   return (
     <AdminLayout>
-        <p className='text-warning'>Nagin shrestha</p>
+        <p>jhcgvdgwcv</p>
+        
     </AdminLayout>
   )
 }
-
-export default Signup

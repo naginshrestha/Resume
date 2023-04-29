@@ -1,0 +1,18 @@
+:root {
+  --background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+
+}
+
+.App{
+  background-image: var(--background-image)
+}
+
+.layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Mainbody{
+  flex-grow: 1;
+}
