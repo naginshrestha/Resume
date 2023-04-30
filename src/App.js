@@ -13,6 +13,8 @@ import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from "firebase/auth";
 import {userAction} from './actions/userAction'
 import { auth } from "./firebase-config/firebase-config";
+import {getResumeAction} from './actions/actionResume'
+import { useEffect } from 'react';
 
 
 
@@ -24,6 +26,10 @@ function App() {
 
     dispatch(userAction(user.uid));
   });
+  useEffect(()=>{
+    dispatch(getResumeAction())
+  },[])
+
   return (
     <div className="App">
       <BrowserRouter>

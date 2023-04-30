@@ -1,52 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { AdminLayout } from "../../components/layout/AdminLayout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import ListGroup from "react-bootstrap/ListGroup";
+import {applyjobAction} from '../../actions/applyjobAction'
 
 import Card from "react-bootstrap/Card";
 // import ListGroup from "react-bootstrap/ListGroup";
 import InputGroup from "react-bootstrap/InputGroup";
+import { useDispatch, useSelector } from "react-redux";
 export const Dashboard = () => {
-  var css = {
-    h1: {
-      padding: 0,
-    },
-  };
+  const dispatch = useDispatch();
+
+
+  const { resume } = useSelector((state) => state.resume);
+
+  const [data, setData] = useState({});
+
+  const handleChanged =(e) =>{
+    const {name , value} = e.target;
+    setData({...data,[name]: value,});
+
+  }
+
+  const handleSumit =(e) =>{
+    e.preventDefault();
+    dispatch(applyjobAction(data));
+
+
+}
+
+
   return (
 
-    <AdminLayout style={css.form}>
+    <AdminLayout>
       <div>
-        <div className="m-5 b-solid c-black shadow p-5">
-          <h1 className="text-center mt-2">Provide your Applied Jobs</h1>
-          <Form className="mt-5">
+        <div className="m-5 p b-solid c-black shadow p-5">
+         
+
+          <Form onSubmit={handleSumit} className="mt-5">
+          <h1 className="text-center mt-2">Jobs you want to apply</h1>
+
             <Form.Label htmlFor="basic-url">Your Job link</Form.Label>
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon3">
-                https://example.com/users/
-              </InputGroup.Text>
-              <Form.Control id="basic-url" aria-describedby="basic-addon3" />
-            </InputGroup>
+  
+              <Form.Control id="basic-url" type="text" name="url"  onChange={handleChanged} />
+        
             <Form.Label>Job Title</Form.Label>
-            <Form.Control required type="text" placeholder="Job Title" />
+            <Form.Control required type="text" name="title"  onChange={handleChanged} placeholder="Job Title" />
+
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Job Description Requirements</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control as="textarea" name="description"  onChange={handleChanged} rows={3} />
             </Form.Group>
             <Form.Group controlId="date" className="mb-3">
               <Form.Label>Applied Date</Form.Label>
-              <Form.Control type="date" />
+              <Form.Control type="date" name="applydata"  onChange={handleChanged} />
             </Form.Group>
             <Form.Group controlId="date" className="mb-3">
               <Form.Label>Due Date</Form.Label>
-              <Form.Control type="date" />
+              <Form.Control type="date"  name="duedate"  onChange={handleChanged}/>
             </Form.Group>
-            <Button size="lg">Submit</Button>{" "}
-          </Form>{" "}
+            <Button size="lg" type="submit">Submit</Button>{" "}
+          </Form>
         </div>
 
         <div className="m-5  g-3 justify-content-around d-grid  p-2 align-items-center  shadow p-5">

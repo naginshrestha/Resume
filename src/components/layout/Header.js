@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button';
 
 
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 export const Header = () => {
@@ -27,6 +29,12 @@ export const Header = () => {
         <Nav className='dropdowntitle ms-auto gap-4 fs-4'>
         {/* <Link to="/" className="nav-link ">Home</Link>
         <Link to="/dashboard" className="nav-link ">Dashboard</Link> */}
+
+
+         <Link to="/" className="nav-link ">Home</Link>
+
+  
+     
 
         <NavDropdown title="Setting" class="select-icon" id="navbarScrollingDropdown">
               <NavDropdown.Item as={Link} to="/user/profile">Profile</NavDropdown.Item>

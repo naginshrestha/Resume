@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 
 export const UserProfile = () => {
     const { user } = useSelector((state) => state.user);
+    const { resume } = useSelector((state) => state.resume);
     const [frm, setFrm] = useState({})
     const inputs = [
         {
@@ -81,7 +82,7 @@ export const UserProfile = () => {
     ]
     const navigate = useNavigate();
 
-
+    console.log("oo",resume);
  
 
 
