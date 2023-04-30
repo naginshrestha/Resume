@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Button, Form, InputGroup } from 'react-bootstrap'
 import { AdminLayout } from '../../components/layout/AdminLayout'
@@ -70,6 +71,7 @@ const handleSumit = async(e)=>{
 }
   return (
     <AdminLayout>
+
            <div className='d-grid login-container'>
 
 <Form onSubmit={handleSumit}   className='shadow m-auto p-5 mt-5 w-75 justify-content-center align-items-center ' >
@@ -97,6 +99,7 @@ Forget Password?<Link to="/resetpassword" className="nav-link ">Reset</Link>
 </Form>
 
       </div>
+
     </AdminLayout>
-  )
-}
+  );
+};
