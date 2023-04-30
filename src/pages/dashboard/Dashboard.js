@@ -15,6 +15,8 @@ export const Dashboard = () => {
 
 
   const { resume } = useSelector((state) => state.resume);
+  const { jobs } = useSelector((state) => state.applyjob);
+
 
   const [data, setData] = useState({});
 
@@ -24,12 +26,19 @@ export const Dashboard = () => {
 
   }
 
+
   const handleSumit =(e) =>{
     e.preventDefault();
     dispatch(applyjobAction(data));
 
 
 }
+
+ const handleClick =(e) =>{
+
+  console.log("ui");
+
+ }
 
 
   return (
@@ -69,135 +78,56 @@ export const Dashboard = () => {
           </Form>
         </div>
 
-        <div className="m-5  g-3 justify-content-around d-grid  p-2 align-items-center  shadow p-5">
-          <h1 className="text-center">Description</h1>
+        <div className="m-5    g-3 justify-content-around d-grid  p-3 align-items-center  shadow ">
           <h1 className="text-center mt-5">List of Applied jobs</h1>
 
-          <Table className="mt-5" striped bordered hover>
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Job Title</th>
-                <th>Job Link</th>
-                <th>Applied Date</th>
-                <th>Due Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Software Eng</td>
-                <td>https:://www.example.com</td>
-                <td>24/04/2023</td>
-                <td>24/04/2023</td>
-                <td>pending/Accepted/hired</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Software Eng</td>
-                <td>https:://www.example.com</td>
-                <td>24/04/2023</td>
-                <td>24/04/2023</td>
-                <td>pending/Accepted/hired</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Software Eng</td>
-                <td>https:://www.example.com</td>
-                <td>24/04/2023</td>
-                <td>24/04/2023</td>
-                <td>pending/Accepted/hired</td>
-              </tr>
-            </tbody>
-          </Table>
+          <div className="d-flex gap-4 flex-column justify-content-between align-items-center">
 
-          <div className="m-5 d-flex f-wrap">
-            {/* <Card className="m-5" style={{ width: "20rem" }}>
-              <Card.Body>
-                <Card.Title>Applied Jobs</Card.Title>
-                <hr></hr>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Job Title
-                </Card.Subtitle>
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item>Applied Date:</ListGroup.Item>
-                  <ListGroup.Item>Status:</ListGroup.Item>
-                  <ListGroup.Item>Due Date:</ListGroup.Item>
-                </ListGroup>
-                <hr></hr>
+          <div className="  card-list  p-2 shadow">
+            <h5 className="text-center">Apply</h5>
 
-                <Card.Link href="#">Job Link</Card.Link>
-              </Card.Body>
-            </Card> */}
+            {
+              jobs.map((item)=>{
+                console.log("tt",item);
+                return(
+                  <div onClick={handleClick} className="p-3 square border border-dark mb-2"  >
+                  <p className="text-center ">{item.title}</p>
+                  </div>
 
-            <Card className="m-5" style={{ width: "20rem" }}>
-              <Card.Body>
-                <Card.Title>Pending Jobs</Card.Title>
-                <hr></hr>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Job Title
-                </Card.Subtitle>
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item>Applied Date:</ListGroup.Item>
-                  <ListGroup.Item>Status:</ListGroup.Item>
-                  <ListGroup.Item>Due Date:</ListGroup.Item>
-                </ListGroup>
-                <hr></hr>
 
-                <Card.Subtitle className="mb-2 text-muted">
-                  Optimise your CV
-                </Card.Subtitle>
-                <Card.Text>
-                  <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ol>
-                </Card.Text>
+                    
+                 
+                )
+              })
 
-                <Card.Link href="#">Job Link</Card.Link>
-              </Card.Body>
-            </Card>
+            }
 
-            <Card className="m-5" style={{ width: "20rem" }}>
-              <Card.Body>
-                <Card.Title>Accepted Jobs</Card.Title>
-                <hr></hr>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Job Title
-                </Card.Subtitle>
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item>Applied Date:</ListGroup.Item>
-                  <ListGroup.Item>Status:</ListGroup.Item>
-                  <ListGroup.Item>Due Date:</ListGroup.Item>
-                </ListGroup>
-                <hr></hr>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Possible Interview Questions
-                </Card.Subtitle>
-                <Card.Text>What is Boostrap??</Card.Text>
 
-                <Card.Subtitle className="mb-2 text-muted">
-                  Interview DAte
-                </Card.Subtitle>
-                <Card.Text>Date:</Card.Text>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Optimise your CV
-                </Card.Subtitle>
-                <Card.Text>
-                  <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ol>
-                </Card.Text>
-                <Card.Link href="#">Job Link</Card.Link>
-              </Card.Body>
-            </Card>
           </div>
+
+          <div className="  card-list  p-2 shadow">
+            <h5 className="text-center">Pending</h5>
+
+
+          </div>
+
+          <div className="  card-list  p-2 shadow">
+            <h5 className="text-center">Accepted</h5>
+
+
+          </div>
+
+          <div className="  card-list  p-2 shadow">
+            <h5 className="text-center">Rejected</h5>
+
+
+          </div>
+            
+          </div>
+
+
+
+ 
         </div>
       </div>
 

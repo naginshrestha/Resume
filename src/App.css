@@ -23,3 +23,8 @@
 .profile-info{
   flex-grow: 1;
 }
+
+.card-list{
+  height: 400px;
+  width: 300px;
+}
