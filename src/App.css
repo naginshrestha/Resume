@@ -1,30 +1,101 @@
 :root {
   --background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-
 }
 
-.App{
-  background-image: var(--background-image)
+.App {
+  background-image: var(--background-image);
 }
 
-.layout{
+.layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.Mainbody{
+.Mainbody {
   flex-grow: 1;
 }
 .user-img {
   height: 100px;
   width: 100px;
 }
-.profile-info{
+.profile-info {
   flex-grow: 1;
 }
 
-.card-list{
-  height: 400px;
-  width: 300px;
+.card-list {
+  min-height: 400px;
+  min-width: 250px;
+  /* border-style: solid;*/
+  border-radius: 10px;
+  padding: 2rem;
+}
+.wrapper {
+  padding: 2rem;
+  height: auto;
+  width: 100%;
+  display: grid;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  /* border-style: solid; */
+
+  flex-wrap: wrap;
+}
+.wrapper > div {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 1px 4px 6px #0d040940;
+}
+
+.addresume {
+  justify-content: center;
+}
+.resumewrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: #4d9109; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 4px 2rem;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 40%;
+}
+
+.button {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 4px 2rem;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 30%;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.buttonwrapper {
+  display: flex;
+  justify-content: center;
+  /* border-style: dashed; */
+  padding: 10px 0;
 }
