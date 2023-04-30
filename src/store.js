@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import  userReducer   from "./slice/userSlice";
+import resumeReducer from './slice/userResume'
 
 
 
@@ -8,6 +9,8 @@ import  userReducer   from "./slice/userSlice";
 export default configureStore({
     reducer: {
       user: userReducer,
+      resume: resumeReducer,
+
 
 
     },
