@@ -15,6 +15,7 @@ export const Dashboard = () => {
     },
   };
   return (
+
     <AdminLayout style={css.form}>
       <div>
         <div className="m-5 b-solid c-black shadow p-5">
@@ -179,6 +180,7 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+
     </AdminLayout>
   );
 };
